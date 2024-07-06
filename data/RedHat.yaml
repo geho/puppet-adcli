@@ -1,0 +1,7 @@
+---
+version: 5
+
+#
+# ldap client parameters
+#
+adcli::ldaps_cacert_path: '/etc/pki/tls/certs/ca-bundle.crt'

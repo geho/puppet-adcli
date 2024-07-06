@@ -1,0 +1,121 @@
+---
+version: 5
+
+#
+# management scope
+#
+adcli::manage_package: false
+adcli::manage_ad_computer: false
+adcli::manage_openldap_utils: true
+adcli::manage_ad_users: true
+adcli::manage_ad_groups: true
+#
+# puppet log output control
+# 
+adcli::log_output: false
+#
+# package management
+#
+adcli::package_ensure: 'installed'
+adcli::package_name: 'adcli'
+#
+# ad computer account management
+#
+adcli::ad_computer_ensure: 'joined'
+#
+# domain parameters
+#
+adcli::domain: 'example.org'
+adcli::domain_realm: 'EXAMPLE.ORG'
+adcli::domain_controller: 'dc.example.org'
+adcli::domain_computer_ou: ~
+adcli::domain_user_ou: ~
+adcli::domain_group_ou: ~
+adcli::login_type: ~
+#adcli::login_user: 'adjoin'
+#adcli::password: 'password'
+adcli::login_user: ~
+adcli::password: ~
+adcli::one_time_password: ~
+adcli::login_ccache: ~
+#
+# host parameters (preset-computer, join, update, reset-computer, delete-computer)
+#
+adcli::computer_name: ~
+adcli::host_fqdn: ~
+adcli::host_keytab: ~
+adcli::os_name: ~
+adcli::os_version: ~
+adcli::os_service_pack: ~
+adcli::description: ~
+adcli::preset_user_principal: ~
+adcli::user_principal: ~
+adcli::service_names: []
+adcli::service_principals: []
+adcli::attributes: []
+adcli::trusted_for_delegation: ~
+adcli::dont_expire_password: ~
+adcli::computer_password_lifetime: ~
+adcli::account_disable: ~
+adcli::computer_account_as_root_k5identity: ~
+#
+# samba integration
+#
+adcli::add_samba_data: ~
+adcli::samba_data_tool: ~
+#
+# ad user account management
+#
+adcli::ad_user_ensure: 'created'
+#
+# user parameters (create-user, passwd-user, delete-user)
+#
+adcli::user_name: ~
+adcli::user_display_name: ~
+adcli::email_address: ~
+adcli::unix_home: ~
+adcli::unix_uid: ~
+adcli::unix_gid: ~
+adcli::unix_shell: ~
+adcli::nis_domain: ~
+#
+# ad group object management
+#
+adcli::ad_group_ensure: 'created'
+#
+# group parameters (create-group, delete-group)
+#
+adcli::group_name: ~
+adcli::group_description: ~
+#
+# ldap client parameters
+#
+adcli::ldap_auth_type: 'gssapi'
+adcli::ldaps_cacert_path: ~
+adcli::ldap_basedn: ~
+adcli::ldap_binddn: ~
+adcli::ldap_bindpw: ~
+adcli::ldap_krb5_principal: ~
+adcli::ldap_krb5_keytab: ~
+adcli::ldap_computerdn: ~
+adcli::ldap_servicedn: ~
+adcli::ldap_userdn: ~
+adcli::ldap_groupdn: ~
+adcli::ldap_filter_service: ~
+adcli::ldap_filter_user: ~
+adcli::ldap_filter_group: ~
+adcli::ldap_parameters: ~
+#
+# openldap::utils
+#
+openldap::utils::package: 'openldap-clients'
+openldap::utils::package_version: 'installed'
+#
+# internal dependencies
+#
+adcli::manage_gem_inifile: true
+adcli::ensure_gem_inifile: 'installed'
+adcli::package_name_gem_inifile: 'inifile'
+adcli::provider_gem_inifile: 'puppet_gem'
+adcli::source_gem_inifile: ~
+adcli::install_options_gem_inifile: ['--no-document']

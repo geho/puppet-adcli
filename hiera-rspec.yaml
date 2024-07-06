@@ -1,0 +1,21 @@
+---
+version: 5
+
+defaults:  # Used for any hierarchy level that omits these keys.
+  datadir: data         # This path is relative to hiera.yaml's directory.
+  data_hash: yaml_data  # Use the built-in YAML backend.
+
+hierarchy:
+  #- name: "rspec osfamily/major release"
+  #  paths:
+  #      # Used to distinguish between Debian and Ubuntu
+  #    - "os/%{facts.os.name}/rspec-%{facts.os.release.major}.yaml"
+  #    - "os/%{facts.os.family}/rspec-%{facts.os.release.major}.yaml"
+  #      # Used for Solaris
+  #    - "os/%{facts.os.family}/rspec-%{facts.kernelrelease}.yaml"
+  #- name: "rspec osfamily"
+  #  paths:
+  #    - "os/rspec-%{facts.os.name}.yaml"
+  #    - "os/rspec-%{facts.os.family}.yaml"
+  - name: 'rspec'
+    path: 'rspec.yaml'

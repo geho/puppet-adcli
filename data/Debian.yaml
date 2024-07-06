@@ -1,0 +1,11 @@
+---
+version: 5
+
+#
+# package management
+#
+adcli::ldap_client_package_name: 'ldap-utils'
+#
+# ldap client parameters
+#
+adcli::ldaps_cacert_path: '/etc/ssl/certs/ca-certificates.crt'
