@@ -20,3 +20,10 @@ All notable changes to this project will be documented in this file.
 **Known Issues**
 
 - no initial user paswords, created accounts are disabled
+
+## 0.1.1
+
+### Changed
+
+- Remove domain_controllers from facter (long list in huge environments might be > 4096 bytes)
+

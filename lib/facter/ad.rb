@@ -49,6 +49,8 @@ Facter.add(:ad) do
                 ad_hash[sec]['domain_realm'] = value.upcase
               elsif nam == 'domain_controller_flags'
                 ad_hash[sec][nam] = value.split(' ')
+              elsif nam == 'domain_controllers'
+                next
               else
                 ad_hash[sec][nam] = value
               end
